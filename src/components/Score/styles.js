@@ -38,7 +38,7 @@ export const HouseName = styled.h3`
 export const StudantName = styled.h2`
   width: 100%;
   color: #3461a4;
-  font-size: 20px;
+
   box-sizing: border-box;
   padding-left: 1rem;
   text-align: center;
@@ -52,10 +52,16 @@ export const Input = styled.input`
   align-self: center;
 `;
 export const Lose = styled.button`
-  width: 30%;
+  height: 30px;
+  color: #fff;
+  background-color: #f8a388;
+  width: 40%;
 `;
 export const Gain = styled.button`
-  width: 30%;
+  width: 40%;
+  color: #fff;
+  background-color: #65e1cb;
+  height: 30px;
 `;
 export const ButtonBox = styled.div`
   width: 100%;
@@ -73,4 +79,14 @@ export const BoxImage = styled.div`
 `;
 export const StudantImage = styled.img`
   width: 100%;
+`;
+export const InputBox = styled.div`
+    width: 100%
+
+    align-items: center;
+    margin: 1rem auto;
+
+    padding-left: 1rem;
+
+    text-align: center;
 `;

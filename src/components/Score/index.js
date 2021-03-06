@@ -14,19 +14,23 @@ import {
   BoxContent,
   BoxImage,
   StudantImage,
+  InputBox,
 } from "./styles.js";
 import cobra from "../../images/cobra.svg";
 import falcao from "../../images/falcao.svg";
 import leao from "../../images/leao.svg";
 import escudo from "../..//images/proteja-a-forma-branca-com-uma-fita.svg";
 import texugo from "../../images/texugo.svg";
-
+import { useDispatch } from "react-redux";
+import { updateScoreThunk } from "../../store/modules/houseScore/thunk.js";
 const Score = () => {
+  const dispatch = useDispatch();
   const history = useHistory();
   const [house, setHouse] = useState([]);
   const [houseImg, setHouseImg] = useState();
+  const [score, setScore] = useState(0);
   const student = useSelector((state) => state.student);
-  console.log(student);
+
   useEffect(() => {
     if (student[0].house === "Gryffindor") {
       setHouse("Gryffindor");
@@ -56,11 +60,27 @@ const Score = () => {
           {student?.map((studant, index) => (
             <StudantName key={index}>{studant.name}</StudantName>
           ))}
-          <Input />
+          <InputBox>
+            <Input onChange={(e) => setScore(e.target.value)} />{" "}
+          </InputBox>
+
           <ButtonBox>
-            <Gain>Gain</Gain> <Lose>Lose</Lose>{" "}
+            <Gain
+              onClick={() => (
+                dispatch(updateScoreThunk([house, score])), history.push("/")
+              )}
+            >
+              Gain
+            </Gain>
+            <Lose
+              onClick={() => (
+                dispatch(updateScoreThunk([house, score * -1])),
+                history.push("/")
+              )}
+            >
+              Lose
+            </Lose>
           </ButtonBox>
-          <button onClick={() => history.push("/")}>ir pra o coisa</button>
         </BoxContent>
       </Box>
     </>
