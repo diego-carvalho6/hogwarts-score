@@ -30,20 +30,20 @@ const Score = () => {
   const [houseImg, setHouseImg] = useState();
   const [score, setScore] = useState(0);
   const student = useSelector((state) => state.student);
-
+  console.log(student[0].house);
   useEffect(() => {
     if (student[0].house === "Gryffindor") {
       setHouse("Gryffindor");
       setHouseImg(leao);
-    } else if (student[0].house === "Slythern") {
-      setHouse("Slythern");
-      setHouseImg({ cobra });
+    } else if (student[0].house === "Slytherin") {
+      setHouse("Slytherin");
+      setHouseImg(cobra);
     } else if (student[0].house === "Hufflepuff") {
       setHouse("Hufflepuff");
-      setHouseImg({ texugo });
+      setHouseImg(texugo);
     } else if (student[0].house === "Ravenclaw") {
       setHouse("Ravenclaw");
-      setHouseImg({ falcao });
+      setHouseImg(falcao);
     }
   }, [student]);
 
@@ -61,7 +61,7 @@ const Score = () => {
             <StudantName key={index}>{studant.name}</StudantName>
           ))}
           <InputBox>
-            <Input onChange={(e) => setScore(e.target.value)} />{" "}
+            <Input type="number" onChange={(e) => setScore(e.target.value)} />{" "}
           </InputBox>
 
           <ButtonBox>

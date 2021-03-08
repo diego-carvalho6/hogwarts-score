@@ -21,6 +21,7 @@ export const Windown = styled.div`
   left: 0;
   min-height: 100vh;
   height: 180vh;
+
   width: 100%;
   background-color: rgb(0, 0, 0, 0.5);
   z-index: 1;

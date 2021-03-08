@@ -19,12 +19,16 @@ export const StyledPaper = styled.div`
   background-color: #e5edf2;
   /* position: absolute; */
   display: flex;
+  flex-direction: column;
+  color: #5777a8;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   text-align: center;
   max-width: 247px;
   max-height: 448px;
   width: 100%;
+  font-size: 30px;
+
   height: 100vh;
   margin: 2rem;
 `;

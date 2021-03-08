@@ -1,7 +1,7 @@
 import { updateScoreType } from "./actionsType";
 const houseBase = [
   { name: "Gryffindor", score: 0 },
-  { name: "Slythern", score: 0 },
+  { name: "Slytherin", score: 0 },
   { name: "Hufflepuff", score: 0 },
   { name: "Ravenclaw", score: 0 },
 ];
