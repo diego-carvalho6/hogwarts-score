@@ -12,7 +12,7 @@ const Students = () => {
 
   useEffect(() => {
     axios
-      .get("http://hp-api.herokuapp.com/api/characters/students")
+      .get("https://hp-api.herokuapp.com/api/characters/students")
       .then((response) => setStudents(response.data));
   }, []);
 
